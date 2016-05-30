@@ -1,0 +1,19 @@
+<h1>This is a random grid of letters</h1>
+<p>Make you own combination of letters and make a word and please input that word:)</p>
+<p><%=@grid%></p>
+
+<!-- <input type="hidden"> -->
+
+<% start_t = @time_start %>
+<% grid = @grid %>
+<% @grid_transmit = @grid.join("") %>
+
+<form action="/score">
+  <label for="question">Speak to your coach</label>
+  <input type="hidden" name="start_time" value="<%=start_t%>">
+  <input type="text" id="question" name="user_input" placeholder="what time is it?">
+  <input type="hidden" name="grid" value="<%= @grid_transmit %>">
+  <!--   <input type="hidden" name="user_input"> -->
+  <input type="submit" value="Go on!">
+</form>
+
